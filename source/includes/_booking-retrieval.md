@@ -1,6 +1,6 @@
 # BookingRetrieval
 
-> Ejemplo BookingRetrievalRequest para recuperar una reserva en particular
+> Ejemplo BookingRetrievalRequest para recuperar una reserva en particulares
 &nbsp;&nbsp;<span class="postman-button">[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/495ff7995b655b745365)</span>
 
 ````xml
