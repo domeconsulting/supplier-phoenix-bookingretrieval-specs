@@ -283,6 +283,18 @@ A través de esta API PUSH el proveedor podrá consultar y descargar las reserva
 <td>1.1.2</td>
 <td>Se añaden nuevos valores informativos en el nodo ExtraCustomData</td>
 </tr>
+<tr>
+<td>20/03/2020</td>
+<td>Rafel Mestre</td>
+<td>1.1.3</td>
+<td>Se añade el valor ota del método de pago. Se añade el país de orígen de la reserva.</td>
+</tr>
+<tr>
+<td>23/03/2020</td>
+<td>Rafel Mestre</td>
+<td>1.1.3</td>
+<td>Se añaden los nombres de los pasajeros de la reserva.</td>
+</tr>
 </tbody></table>
 
           <h1 id="protocolo-de-conexi-n">Protocolo de conexión</h1>
@@ -849,10 +861,12 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
                 <span class="nt">&lt;amount&gt;</span>116.67<span class="nt">&lt;/amount&gt;</span>
             <span class="nt">&lt;/roomRateDay&gt;</span>
             <span class="nt">&lt;guest</span> <span class="na">id=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;name&gt;</span>Juan Ballester<span class="nt">&lt;/name&gt;</span>
                 <span class="nt">&lt;type&gt;</span>Adult<span class="nt">&lt;/type&gt;</span>
                 <span class="nt">&lt;amount&gt;</span>175.00<span class="nt">&lt;/amount&gt;</span>
             <span class="nt">&lt;/guest&gt;</span>
             <span class="nt">&lt;guest</span> <span class="na">id=</span><span class="s">"2"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;name&gt;</span>Elena Ballester<span class="nt">&lt;/name&gt;</span>
                 <span class="nt">&lt;type&gt;</span>Adult<span class="nt">&lt;/type&gt;</span>
                 <span class="nt">&lt;amount&gt;</span>175.00<span class="nt">&lt;/amount&gt;</span>
             <span class="nt">&lt;/guest&gt;</span>
@@ -880,10 +894,12 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
                 <span class="nt">&lt;amount&gt;</span>50.00<span class="nt">&lt;/amount&gt;</span>
             <span class="nt">&lt;/roomRateDay&gt;</span>
             <span class="nt">&lt;guest</span> <span class="na">id=</span><span class="s">"3"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;name&gt;</span>Elena Ballester<span class="nt">&lt;/name&gt;</span>
                 <span class="nt">&lt;type&gt;</span>Adult<span class="nt">&lt;/type&gt;</span>
                 <span class="nt">&lt;amount&gt;</span>100.00<span class="nt">&lt;/amount&gt;</span>
             <span class="nt">&lt;/guest&gt;</span>
             <span class="nt">&lt;guest</span> <span class="na">id=</span><span class="s">"4"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;name&gt;</span>Elena Ballester<span class="nt">&lt;/name&gt;</span>
                 <span class="nt">&lt;type&gt;</span>Child<span class="nt">&lt;/type&gt;</span>
                 <span class="nt">&lt;amount&gt;</span>50.00<span class="nt">&lt;/amount&gt;</span>
             <span class="nt">&lt;/guest&gt;</span>
@@ -911,6 +927,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
         <span class="nt">&lt;bookingPayment&gt;</span>
             <span class="nt">&lt;modality&gt;</span>Establishment<span class="nt">&lt;/modality&gt;</span>
             <span class="nt">&lt;type&gt;</span>PrepaidCard<span class="nt">&lt;/type&gt;</span>
+        <span class="nt">&lt;otaType&gt;</span>PC<span class="nt">&lt;/otaType&gt;</span>
         <span class="nt">&lt;description&gt;</span>Tarjeta de prepago<span class="nt">&lt;/description&gt;</span>
             <span class="nt">&lt;status&gt;</span>Pending<span class="nt">&lt;/status&gt;</span>
         <span class="nt">&lt;/bookingPayment&gt;</span>
@@ -936,6 +953,7 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
             <span class="nt">&lt;action&gt;</span>Charge<span class="nt">&lt;/action&gt;</span>
             <span class="nt">&lt;paymentStatus&gt;</span>Pending<span class="nt">&lt;/paymentStatus&gt;</span>
             <span class="nt">&lt;type&gt;</span>PrepaidCard<span class="nt">&lt;/type&gt;</span>
+                        <span class="nt">&lt;otaType&gt;</span>PC<span class="nt">&lt;/otaType&gt;</span>
             <span class="nt">&lt;date&gt;</span>23/07/2019 09:42<span class="nt">&lt;/date&gt;</span>
             <span class="nt">&lt;amount&gt;</span>2635.66<span class="nt">&lt;/amount&gt;</span>
             <span class="nt">&lt;prepaidCardDetail&gt;</span>
@@ -1001,11 +1019,13 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
           </span><span class="s2">"guest"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
               </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Juan Ballester"</span><span class="p">,</span><span class="w">
               </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adult"</span><span class="p">,</span><span class="w">
               </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"175.00"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
               </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elena Ballester"</span><span class="p">,</span><span class="w">
               </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adult"</span><span class="p">,</span><span class="w">
               </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"175.00"</span><span class="w">
             </span><span class="p">}</span><span class="w">
@@ -1039,11 +1059,13 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
           </span><span class="s2">"guest"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
               </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elena Ballester"</span><span class="p">,</span><span class="w">
               </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adult"</span><span class="p">,</span><span class="w">
               </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100.00"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
               </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elena Ballester"</span><span class="p">,</span><span class="w">
               </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Child"</span><span class="p">,</span><span class="w">
               </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50.00"</span><span class="w">
             </span><span class="p">}</span><span class="w">
@@ -1077,7 +1099,8 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual</p>
       </span><span class="s2">"bookingPayment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"modality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Establishment"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WarrantyCard"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tarjeta de garantía"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"otaType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PC"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tarjeta de garantía"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pending"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="s2">"paymentCardDetail"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1191,7 +1214,19 @@ o bien las reservas de un hotel creadas, canceladas o modificadas dentro de un r
 <td>↳ modificationDate</td>
 <td><em>DateTime</em></td>
 <td>No</td>
-<td>Fecha de creación de la reserva (dd/MM/yyyy HH:mm). Sólo viene informado cuando es una modificación de reserva</td>
+<td>Fecha de modificación de la reserva (dd/MM/yyyy HH:mm). Sólo viene informado cuando es una modificación de reserva</td>
+</tr>
+<tr>
+<td>↳ cancellationDate</td>
+<td><em>DateTime</em></td>
+<td>No</td>
+<td>Fecha de cancelación de la reserva (dd/MM/yyyy HH:mm). Sólo viene informado cuando es una cancelación de reserva</td>
+</tr>
+<tr>
+<td>↳ country</td>
+<td><em>String</em></td>
+<td>No</td>
+<td>Código del país de origen de la reserva (2 letter ISO 3166). Sólo vendrá informado en la reservas propias de Hotetec</td>
 </tr>
 <tr>
 <td>↳ checkIn</td>
@@ -1368,6 +1403,12 @@ o bien las reservas de un hotel creadas, canceladas o modificadas dentro de un r
 <td>Identificador del pasajero</td>
 </tr>
 <tr>
+<td>↳↳↳ name</td>
+<td><em>String</em></td>
+<td>Sí</td>
+<td>Nombre del pasajero. Si el nombre no ha sido informado en la reserva, se substituirá por el nombre de la persona de contacto</td>
+</tr>
+<tr>
 <td>↳↳↳ type</td>
 <td><em>Enum</em></td>
 <td>Sí</td>
@@ -1464,6 +1505,12 @@ o bien las reservas de un hotel creadas, canceladas o modificadas dentro de un r
 <td>Tipo de pago (BankTransfer / Card / VirtualCard / PrepaidCard / WarrantyCard / Cash / Cheque / Credit / Voucher / ExternalManaged / PinPad)</td>
 </tr>
 <tr>
+<td>↳↳ otaType</td>
+<td><em>Enum</em></td>
+<td>No</td>
+<td>Tipo de pago OTA (PA: Agency prepaid/PC: Customer prepaid/PD: Customer payment/PB: Voucher Payment/FC: Credit invoice/PM: Loyalty points + money PU: Loyalty Points/SC: By contract/SD: OTA Virtual card/NN: TPV pending/AW: Prepaid TPV with AMEX/VW: Prepaid TPV NO AMEX)</td>
+</tr>
+<tr>
 <td>↳↳ status</td>
 <td><em>Enum</em></td>
 <td>Sí</td>
@@ -1528,6 +1575,12 @@ o bien las reservas de un hotel creadas, canceladas o modificadas dentro de un r
 <td><em>String</em></td>
 <td>Sí</td>
 <td>Código del tipo de pago (Establishment / Inmediate / Deferred / CancelPenalty / Instalment / ExternManagement)</td>
+</tr>
+<tr>
+<td>↳↳ otaType</td>
+<td><em>Enum</em></td>
+<td>No</td>
+<td>Tipo de pago OTA (PA: Agency prepaid/PC: Customer prepaid/PD: Customer payment/PB: Voucher Payment/FC: Credit invoice/PM: Loyalty points + money PU: Loyalty Points/SC: By contract/SD: OTA Virtual card/NN: TPV pending/AW: Prepaid TPV with AMEX/VW: Prepaid TPV NO AMEX)</td>
 </tr>
 <tr>
 <td>↳↳ date</td>
@@ -2105,6 +2158,11 @@ o bien las reservas de un hotel creadas, canceladas o modificadas dentro de un r
 <td>ReferredBySystem</td>
 <td><em>String</em></td>
 <td>Indica el sistema desde el cual ha llegado la reserva. (HPH -Web-, MPH -Móvil-, GHF -Google Hotel Finder-, TVG -Trivago-,&hellip;).</td>
+</tr>
+<tr>
+<td>ParentSystem</td>
+<td><em>String</em></td>
+<td>Indica el sistema padre desde el cual ha llegado la reserva. (XML -Xml-, STK -Canal externo-, WEB -Web y Web móvil- y CCH -Call Center-).</td>
 </tr>
 <tr>
 <td>Affiliate</td>
