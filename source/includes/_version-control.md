@@ -11,3 +11,4 @@ Fecha | Autor | Versión | Cambios realizados
 20/03/2020 | Rafel Mestre | 1.1.3 | Se añade el valor ota del método de pago. Se añade el país de orígen de la reserva.
 23/03/2020 | Rafel Mestre | 1.1.3 | Se añaden los nombres de los pasajeros de la reserva.
 10/06/2020 | Rafel Mestre | 1.1.4 | Se añade información adicional en los pasajeros, necesaria para efectuar el check-in
+06/07/2020 | Rafel Mestre | 1.1.5 | Se añade el nombre interno de las políticas comerciales aplicadas a una reserva. Se añade también la marca de 'NoShow' a nivel de habitación, en las reservas.
