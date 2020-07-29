@@ -454,6 +454,7 @@ booking[] | **Booking** | No | Información de una reserva de hotel
 ↳ bookingSupplement[]| **BookingSupplement** | No | Información de suplemento reservado
 ↳↳ code| *String* | Sí | Código del suplemento opcional reservado
 ↳↳ name| *String* | Sí | Nombre del suplemento opcional reservado
+↳↳ typeSupplement| *String* | Sí | Indica el tipo de suplemento que tratamos (Mandatory / Optional / SalePolicy)
 ↳↳ internalName| *String* | No | Nombre interno de la política comercial (suplementos del tipo SP) aplicada en la reserva.
 ↳↳ description| *String* | No | Descripción detallada del suplemento opcional reservado
 ↳↳ checkIn| *Date* | No | Fecha de inicio del suplemento (dd/MM/yyy)
@@ -461,6 +462,7 @@ booking[] | **Booking** | No | Información de una reserva de hotel
 ↳↳ bookingRoomId| *Integer* | No | Identificador de la habitación reservada, si el suplemento referencia a una habitación en concreto
 ↳↳ guestId[]| *Integer* | No | Identificador del pasajero al que se hace referencia, si el suplemento referencia a un pasajero/os en concreto
 ↳↳ amount| *Double* | Sí | Importe total del suplemento opcional reservado
+↳↳ promotionalCode[]| *String* | No | Indica los códigos aplicados en el suplemento en cuestión
 ↳↳ mandatory| *Boolean* | Sí | Indica si el suplemento es obligatorio (true) o opcional (false)
 ↳ bookingPayment| **BookingPayment** | No | Información del pago de la reserva<sup>1</sup>
 ↳↳ modality| *Enum* | Sí | Modalidad de pago (Establishment / Inmediate / Deferred / CancelPenalty / Instalment / ExternManagement)
