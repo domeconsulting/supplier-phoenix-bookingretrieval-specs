@@ -90,6 +90,18 @@ La reserva recuperada contiene dos habitaciones: 1 doble + 1 individual
             <mail>elena_ballester1234@mail.com</mail>
             <phone>003466667788</phone>
         </endCustomer>
+	<commission>
+    	    <serviceCommission>
+                <serviceId>1</serviceId>
+                <commissionAmount>0</commissionAmount>
+                <commissionPercentage>0</commissionPercentage>
+            </serviceCommission>
+            <serviceCommission>
+                <serviceId>2</serviceId>
+                <commissionAmount>0</commissionAmount>
+                <commissionPercentage>0</commissionPercentage>
+            </serviceCommission>
+        </commission>
         <hotelCode>1234</hotelCode>
         <bookingRoom id="1">
             <checkIn>15/04/2017</checkIn>
@@ -421,6 +433,11 @@ booking[] | **Booking** | No | Información de una reserva de hotel
 ↳↳ mail| *String* | No | Email del cliente final
 ↳↳ phone| *String* | No | Teléfono de contacto del cliente final
 ↳↳ nationality| *String* | No | Nacionadlidad (2 letter ISO 3166)
+↳ commision| **Commission** | No | Información sobre las comisiones aplicadas en la reserva
+↳↳ serviceCommission[]| *ServiceCommission* | No | Información específica sobre un servicio reservado
+↳↳↳ serviceId| *Integer* | Sí | Identificador que identifica la habitación reservada
+↳↳↳ commissionAmount| *Double* | No| Importe de la comisión aplicada
+↳↳↳ commissionPercentage| *Double* | No | Porcentage de la comisión aplicada
 ↳ hotelCode| *Integer* | Sí | Código de hotel
 ↳ currencyCode| *String* | Sí | Código de divisa (Códigos ISO 4217)
 ↳ bookingRoom[]| **BookingRoom** | Sí | Información de habitación de hotel reservada
