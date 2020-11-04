@@ -454,6 +454,7 @@ booking[] | **Booking** | No | Información de una reserva de hotel
 ↳↳ guest[]| **Guest** | Sí | Pasajero de la reserva
 ↳↳↳ @id| *Integer* | Sí | Identificador del pasajero
 ↳↳↳ name| *String* | Sí | Nombre del pasajero. Si el nombre no ha sido informado en la reserva, se substituirá por el nombre de la persona de contacto
+↳↳↳ gender| *String* | No | Género del pasajero ('Male': Hombre, 'Female': Mujer y 'Undefined': Indefinido). 
 ↳↳↳ type| *Enum* | Sí | Tipo (Adult, Child, Baby)
 ↳↳↳ amount| *Double* | Sí | Importe correspondiente al pasajero
 ↳↳↳ birthDate| *Date* | No | Fecha de nacimiento
